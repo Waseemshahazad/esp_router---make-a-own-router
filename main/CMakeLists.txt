@@ -1,0 +1,27 @@
+idf_component_register(
+    SRCS
+        "softap_example_main.c"
+        "app_config.c"
+        "networking/wifi_ap.c"
+        "server/http_server.c"
+        "server/dashboard.c"
+        "hardware/led/led_driver.c"
+    INCLUDE_DIRS
+        "."
+        "networking"
+        "server"
+        "hardware/led"
+    EMBED_TXTFILES
+        "server/dashboard.html"
+    REQUIRES
+        esp_event
+        esp_http_server
+        esp_netif
+        esp_system
+        esp_timer
+        esp_wifi
+        json
+        led_strip
+        lwip
+        nvs_flash
+)
